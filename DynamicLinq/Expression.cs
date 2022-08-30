@@ -18,4 +18,11 @@ public static class Expression
         var generatedExpression = CSharpScript.EvaluateAsync<Func<TSource, bool>>("t => t." + expression, options).Result;
         return source.Where(generatedExpression);
     }
+
+    public static IEnumerable<TSource> OrderBy<TSource>(this IEnumerable<TSource> source, string expression)
+    {
+        var options = ScriptOptions.Default.AddReferences(typeof(TSource).Assembly);
+        var generatedExpression = CSharpScript.EvaluateAsync<Func<TSource, object>>("t => t." + expression, options).Result;
+        return source.OrderBy(generatedExpression);
+    }
 }

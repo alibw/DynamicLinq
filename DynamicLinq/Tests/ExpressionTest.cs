@@ -18,5 +18,6 @@ public class ExpressionTest
             new Product {Name = "Book", Description = "Entertainment",Count = 200},
         };
         Console.WriteLine(products.Where(expression).Count());
+        Console.WriteLine(products.OrderBy("Count").First().Count);
     }
 }
