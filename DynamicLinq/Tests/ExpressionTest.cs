@@ -9,7 +9,7 @@ public class ExpressionTest
     [Test]
     public void myTest()
     {
-        var expression = "Count >= 125";
+        var expression = @"Count >= 125 && Name == ""Tv""";
         
         var products = new List<Product>
         {
