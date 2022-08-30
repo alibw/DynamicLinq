@@ -54,4 +54,5 @@ public class Utils
             return s.Split('\n');
         return ((IEnumerable<string>)s.Split('\n')).Take<string>(maxLines).ToArray<string>();
     }
+    
 }
